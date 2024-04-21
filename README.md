@@ -42,6 +42,7 @@ WIP web app for sharing songs by adding them to shared "playlists", including th
     - [ ] Icons
     - [ ] Layout customization
     - [ ] Custom themes
+    - [ ] Arbitrary ordering
 - [ ] Playlist sync to external platforms
     - [ ] YouTube
 - [ ] Proper administration (multiple list moderators)
