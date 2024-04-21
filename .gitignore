@@ -1,0 +1,5 @@
+song-share
+song-share.db
+*.exe
+
+database/*
