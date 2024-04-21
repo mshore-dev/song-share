@@ -2,4 +2,6 @@ song-share
 song-share.db
 *.exe
 
+config.toml
+
 database/*
