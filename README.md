@@ -18,9 +18,11 @@ WIP web app for sharing songs by adding them to shared "playlists", including th
     - [ ] Invite users to edit lists with invite links
     - [ ] "Hidden" playlists (only visible to invited users, doesn't show up on user profiles)
 
-- [ ] Voting
-    - [ ] Upvote and downvote songs
-    - [ ] View the total number of votes for each song
+- [ ] Songs
+    - [ ] Multiple sources for each song
+    - [ ] Voting
+        - [ ] Upvote and downvote songs
+        - [ ] View the total number of votes for each song
 
 - [ ] Comments
     - [ ] Add comments to songs
