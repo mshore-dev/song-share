@@ -13,7 +13,7 @@ CREATE TABLE songs (
     link text not null,
     comment text,
     foreign key(created_by) references users(id) on delete cascade,
-    foreign key(list_id) references song_lists(id) on delete cascade
+    foreign key(list_id) references lists(id) on delete cascade
 );
 
 CREATE TABLE users_lists (
@@ -51,7 +51,7 @@ CREATE TABLE song_comments (
     song_id integer not null,
     comment text,
     foreign key(created_by) references users(id) on delete cascade,
-    foreign key(song_id) references song(id) on delete cascade
+    foreign key(song_id) references songs(id) on delete cascade
 );
 
 CREATE TABLE song_votes (

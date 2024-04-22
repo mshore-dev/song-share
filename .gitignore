@@ -4,4 +4,4 @@ song-share.db
 
 config.toml
 
-database/*
+database/sqlc
