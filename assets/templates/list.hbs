@@ -1,165 +1,62 @@
 {{> partials/header title=title }}
 
 <h1 class="title">
-    This is the name of the list
+    {{ title }}
 </h1>
 <p class="subtitle">
-    An optional description.     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+    <em>
+        {{#if description}}
+            {{description}}
+        {{else}}
+            The user has not provided a description for this list.
+        {{/if}}
+    </em>
 </p>
 
-<div class="columns">
+{{#unless songs}}
+    <div class="notification is-warning">
+        This list currently doesn't have any songs. Check back later, maybe you'll find your next favorite!
+    </div>
+{{/unless}}
 
-    <div class="column is-half">
+<div class="columns is-multiline is-desktop">
+
+    {{#each songs}}
+
+    <div class="column is-half-desktop">
         <div class="card">
             <header class="card-header">
                 <p class="card-header-title">
-                    <a href="https://www.youtube.com/watch?v=rj57ynwmIlA">【vflower】Geng Shiba at Nightfall【VOCALOID Cover】 </a>
+                    <a href="{{link}}">{{title}}</a>
                 </p>
+
+                <span class="tag is-primary">
+                    Score: {{score}}
+                </span>
+
             </header>
             <div class="card-content">
                 <div class="content">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                        {{#if comment}}
+                            {{comment}}
+                        {{else}}
+                            No comment
+                        {{/if}}
                         <br>
                         <em>
-                            11:09 PM - 1 Jan 2016
+                            {{created_at}}
                         </em>
                 </div>
             </div>
             <footer class="card-footer">
                 <a href="#" class="card-footer-item">+1</a>
                 <a href="#" class="card-footer-item">-1</a>
-                <a href="#" class="card-footer-item">Comments (267)</a>
+                <a href="#" class="card-footer-item">Comments ({{comment_count}})</a>
             </footer>
         </div>
     </div>
 
-    <div class="column is-half">
-        <div class="card">
-            <header class="card-header">
-                <p class="card-header-title">
-                    <a href="https://www.youtube.com/watch?v=rj57ynwmIlA">【vflower】Geng Shiba at Nightfall【VOCALOID Cover】 </a>
-                </p>
-            </header>
-            <div class="card-content">
-                <div class="content">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                        <br>
-                        <em>
-                            11:09 PM - 1 Jan 2016
-                        </em>
-                </div>
-            </div>
-            <footer class="card-footer">
-                <a href="#" class="card-footer-item">+1</a>
-                <a href="#" class="card-footer-item">-1</a>
-                <a href="#" class="card-footer-item">Comments (267)</a>
-            </footer>
-        </div>
-    </div>
-    
-</div>
-
-<div class="columns">
-
-    <div class="column is-half">
-        <div class="card">
-            <header class="card-header">
-                <p class="card-header-title">
-                    <a href="https://www.youtube.com/watch?v=rj57ynwmIlA">【vflower】Geng Shiba at Nightfall【VOCALOID Cover】 </a>
-                </p>
-            </header>
-            <div class="card-content">
-                <div class="content">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                        <br>
-                        <em>
-                            11:09 PM - 1 Jan 2016
-                        </em>
-                </div>
-            </div>
-            <footer class="card-footer">
-                <a href="#" class="card-footer-item">+1</a>
-                <a href="#" class="card-footer-item">-1</a>
-                <a href="#" class="card-footer-item">Comments (267)</a>
-            </footer>
-        </div>
-    </div>
-
-    <div class="column is-half">
-        <div class="card">
-            <header class="card-header">
-                <p class="card-header-title">
-                    <a href="https://www.youtube.com/watch?v=rj57ynwmIlA">【vflower】Geng Shiba at Nightfall【VOCALOID Cover】 </a>
-                </p>
-            </header>
-            <div class="card-content">
-                <div class="content">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                        <br>
-                        <em>
-                            11:09 PM - 1 Jan 2016
-                        </em>
-                </div>
-            </div>
-            <footer class="card-footer">
-                <a href="#" class="card-footer-item">+1</a>
-                <a href="#" class="card-footer-item">-1</a>
-                <a href="#" class="card-footer-item">Comments (267)</a>
-            </footer>
-        </div>
-    </div>
-    
-</div>
-
-<div class="columns">
-
-    <div class="column is-half">
-        <div class="card">
-            <header class="card-header">
-                <p class="card-header-title">
-                    <a href="https://www.youtube.com/watch?v=rj57ynwmIlA">【vflower】Geng Shiba at Nightfall【VOCALOID Cover】 </a>
-                </p>
-            </header>
-            <div class="card-content">
-                <div class="content">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                        <br>
-                        <em>
-                            11:09 PM - 1 Jan 2016
-                        </em>
-                </div>
-            </div>
-            <footer class="card-footer">
-                <a href="#" class="card-footer-item">+1</a>
-                <a href="#" class="card-footer-item">-1</a>
-                <a href="#" class="card-footer-item">Comments (267)</a>
-            </footer>
-        </div>
-    </div>
-
-    <div class="column is-half">
-        <div class="card">
-            <header class="card-header">
-                <p class="card-header-title">
-                    <a href="https://www.youtube.com/watch?v=rj57ynwmIlA">【vflower】Geng Shiba at Nightfall【VOCALOID Cover】 </a>
-                </p>
-            </header>
-            <div class="card-content">
-                <div class="content">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                        <br>
-                        <em>
-                            11:09 PM - 1 Jan 2016
-                        </em>
-                </div>
-            </div>
-            <footer class="card-footer">
-                <a href="#" class="card-footer-item">+1</a>
-                <a href="#" class="card-footer-item">-1</a>
-                <a href="#" class="card-footer-item">Comments (267)</a>
-            </footer>
-        </div>
-    </div>
+    {{/each}}
     
 </div>
 
