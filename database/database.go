@@ -11,6 +11,8 @@ import (
 	"song-share/database/sqlc"
 )
 
+var Queries *sqlc.Queries
+
 func New(uri string) {
 
 	db, err := sql.Open("sqlite3", uri)
@@ -18,5 +20,5 @@ func New(uri string) {
 		log.Fatalf("failed to open database: %v", err)
 	}
 
-	sqlc.New(db)
+	Queries = sqlc.New(db)
 }

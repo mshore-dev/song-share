@@ -4,6 +4,7 @@ import (
 	"log"
 
 	"song-share/config"
+	"song-share/database"
 	"song-share/routes"
 
 	"github.com/gofiber/fiber/v2"
@@ -15,6 +16,9 @@ func main() {
 
 	// TODO: don't hardcode
 	config.LoadConfig("./config.toml")
+
+	// set up database
+	database.New(config.ActiveConfig.Database)
 
 	app := fiber.New(fiber.Config{
 		Views: handlebars.New("./assets/templates", ".hbs"),

@@ -25,6 +25,9 @@ SELECT COUNT(*) FROM songs WHERE created_by = ?;
 -- name: CountSongsInList :one
 SELECT COUNT(*) FROM songs WHERE list_id = ?;
 
+-- name: GetList :one
+SELECT * FROM lists WHERE id = ?;
+
 -- name: CreateList :one
 INSERT INTO lists (created_by, name, description, hidden) VALUES (?, ?, ?, ?) RETURNING *;
 
